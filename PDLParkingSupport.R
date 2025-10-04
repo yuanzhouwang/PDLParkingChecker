@@ -285,3 +285,5 @@ prefit <- list(
 
 # Paste below after PREFIT <- NULL
 dput(prefit, file = "prefit.txt")
+
+

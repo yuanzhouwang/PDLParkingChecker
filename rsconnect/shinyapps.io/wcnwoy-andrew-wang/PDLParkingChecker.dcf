@@ -1,0 +1,12 @@
+name: PDLParkingChecker
+title: PDLParkingChecker
+username: wcnwoy-andrew-wang
+account: wcnwoy-andrew-wang
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15654459
+bundleId: 10990230
+url: https://wcnwoy-andrew-wang.shinyapps.io/PDLParkingChecker/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

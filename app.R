@@ -255,15 +255,25 @@ opt_pay_window <- function(rates_hr, bin_width_h, fine, rate_per_hr = 5, day_cap
   best
 }
 
+load_prefit_from_github <- function(raw_url) {
+  con <- url(raw_url, open = "rb")
+  on.exit(try(close(con), silent = TRUE), add = TRUE)
+  dget(con)
+}
+
 # ---------- prefit posterior ----------
 # Use the provided PDLParkingSupport.R to adjust PREFIT
 
-PREFIT <- NULL
-cat("PREFIT <- ", utils::capture.output(dput(prefit)), sep = "")
+PREFIT <- tryCatch(
+  load_prefit_from_github(
+    "https://github.com/yuanzhouwang/PDLParkingChecker/blob/main/prefit.txt"
+  ),
+  error = function(e) NULL
+)
 
 # ---------- ui ----------
 ui <- fluidPage(
-  titlePanel("Parking ticket risk explorer (Bayesian, 30-min bins)"),
+  titlePanel("Should you pay for parking in PDL?"),
   sidebarLayout(
     sidebarPanel(
       fileInput("csv", "Upload CSV", accept = c(".csv")),

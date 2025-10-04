@@ -1,0 +1,4 @@
+prefit.txt too large for RStudio to Push normally. Run the following in terminal:
+
+git config http.postBuffer 524288000
+git pull && git push
