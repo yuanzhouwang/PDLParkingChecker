@@ -284,4 +284,4 @@ prefit <- list(
 )
 
 # Paste below after PREFIT <- NULL
-cat("PREFIT <- ", utils::capture.output(dput(prefit)), sep = "")
+dput(prefit, file = "prefit.txt")
